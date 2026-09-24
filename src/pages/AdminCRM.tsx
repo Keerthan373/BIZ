@@ -80,7 +80,7 @@ export default function AdminCRM() {
             </article>
           ))}
         </div>
-        {filtered.length > 0 && <div className="admin-info-card"><Check size={17} /><span>{filtered.length} enquiry{filtered.length === 1 ? '' : 'ies'} shown. Statuses: New → Contacted → Interested → Visited.</span></div>}
+        {filtered.length > 0 && <div className="admin-info-card"><Check size={17} /><span>{filtered.length} enquir{filtered.length === 1 ? 'y' : 'ies'} shown. Statuses: New → Contacted → Interested → Visited.</span></div>}
       </AdminSection>
     </div>
   );
