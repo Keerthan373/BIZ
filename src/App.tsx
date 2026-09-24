@@ -2,6 +2,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import PublicSite from './pages/PublicSite';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminAnalytics from './pages/AdminAnalytics';
+import AdminCRM from './pages/AdminCRM';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="/admin/analytics" element={<ProtectedRoute><AdminAnalytics /></ProtectedRoute>} />
+      <Route path="/admin/crm" element={<ProtectedRoute><AdminCRM /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
