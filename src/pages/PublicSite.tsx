@@ -24,20 +24,20 @@ import {
 
 const phoneNumber = '098453 05785';
 const whatsappNumber = '919845305785';
-const fallbackImageUrl = 'https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1800';
+const fallbackImageUrl = '/images/image.png';
 
 const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
   event.currentTarget.onerror = null;
   event.currentTarget.src = fallbackImageUrl;
 };
 
-const heroImageUrl = 'https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1800';
+const heroImageUrl = '/images/image.png';
 
 const gallery = [
-  { src: 'https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=900&w=1200', label: 'The storefront' },
-  { src: 'https://images.pexels.com/photos/6050425/pexels-photo-6050425.jpeg?auto=compress&cs=tinysrgb&h=900&w=700', label: 'The edit' },
-  { src: 'https://images.pexels.com/photos/6050433/pexels-photo-6050433.jpeg?auto=compress&cs=tinysrgb&h=900&w=700', label: 'New arrivals' },
-  { src: 'https://images.pexels.com/photos/30947677/pexels-photo-30947677.jpeg?auto=compress&cs=tinysrgb&h=1200&w=700', label: 'Your next look' },
+  { src: '/images/image copy 3.png', label: 'The storefront' },
+  { src: '/images/image copy.png', label: 'The edit' },
+  { src: '/images/image copy 2.png', label: 'New arrivals' },
+  { src: '/images/image copy 4.png', label: 'Your next look' },
 ];
 
 const reviews = [
@@ -142,7 +142,7 @@ function PublicSite() {
 
       <section className="reviews-section section-pad" id="reviews"><div className="section-heading"><div><div className="section-label">03 / Words from the community</div><h2>Good looks.<br /><em>Good company.</em></h2></div><div className="review-heading-right"><div className="mini-stars">★★★★★</div><p>Real words from the people<br />who have visited BIZ.</p></div></div><div className="reviews-grid">{reviews.map((review) => <article className="review-card" key={review.name}><Quote className="quote-icon" size={23} /><p className="review-text">{review.text}</p><div className="review-author"><div className="avatar">{review.name.charAt(0)}</div><div><strong>{review.name}</strong><small>{review.detail}</small></div><time>{review.time}</time></div></article>)}</div><div className="owner-note"><div className="owner-mark">B</div><div><span>From the owner</span><p>"Thank you for your support. We look forward to serving you again at BIZ Premium Outlet."</p></div></div></section>
 
-      <section className="visit-section" id="visit"><div className="visit-image"><img src="https://images.pexels.com/photos/6050414/pexels-photo-6050414.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1000" alt="BIZ Premium Outlet exterior at night" onError={handleImageError} /></div><div className="visit-panel"><div className="section-label">04 / Find your way here</div><h2>Make it a<br /><em>good visit.</em></h2><p>Drop by for a browse, stay for the details. Our team is here to help you find something that feels entirely yours.</p><div className="visit-details"><div><MapPin size={18} /><span><strong>6/1A1, Doddagubbi Main Rd</strong>Opp. SAM PALACE, CROSS, Kothanur<br />Bengaluru, Karnataka 560077</span></div><div><Clock3 size={18} /><span><strong>Open today</strong>Every day · 10:00 AM — 10:30 PM</span></div><div><Phone size={18} /><span><strong>{phoneNumber}</strong>Call us for a quick question</span></div></div><div className="visit-actions"><MoneyMindButton variant="black" size="lg" icon={<Compass size={16} />} onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=BIZ+Premium+Outlet+Kothanur+Bengaluru', '_blank', 'noopener,noreferrer')}>Get directions</MoneyMindButton><MoneyMindButton variant="white" size="lg" onClick={() => { window.location.href = `tel:${phoneNumber.replace(/\s/g, '')}`; }}>Call the store</MoneyMindButton></div></div></section>
+      <section className="visit-section" id="visit"><div className="visit-image"><img src="/images/image copy 3.png" alt="BIZ Premium Outlet storefront" onError={handleImageError} /></div><div className="visit-panel"><div className="section-label">04 / Find your way here</div><h2>Make it a<br /><em>good visit.</em></h2><p>Drop by for a browse, stay for the details. Our team is here to help you find something that feels entirely yours.</p><div className="visit-details"><div><MapPin size={18} /><span><strong>6/1A1, Doddagubbi Main Rd</strong>Opp. SAM PALACE, CROSS, Kothanur<br />Bengaluru, Karnataka 560077</span></div><div><Clock3 size={18} /><span><strong>Open today</strong>Every day · 10:00 AM — 10:30 PM</span></div><div><Phone size={18} /><span><strong>{phoneNumber}</strong>Call us for a quick question</span></div></div><div className="visit-actions"><MoneyMindButton variant="black" size="lg" icon={<Compass size={16} />} onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=BIZ+Premium+Outlet+Kothanur+Bengaluru', '_blank', 'noopener,noreferrer')}>Get directions</MoneyMindButton><MoneyMindButton variant="white" size="lg" onClick={() => { window.location.href = `tel:${phoneNumber.replace(/\s/g, '')}`; }}>Call the store</MoneyMindButton></div></div></section>
 
       <section className="message-section section-pad"><div className="message-intro"><div className="section-label">A little help, personally</div><h2>Have a question?<br /><em>Message us.</em></h2><p>Looking for a size, a specific style, or just want to say hello? The BIZ team is a message away.</p><a className="whatsapp-link" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Message on WhatsApp <ArrowUpRight size={15} /></a></div><form className="message-form" onSubmit={handleMessage}><label>Your name<input name="name" required placeholder="What should we call you?" /></label><label>Your message<textarea name="message" required placeholder="Tell us what you're looking for..." rows={3} /></label><MoneyMindButton variant="black" size="lg" type="submit" className="form-submit" icon={messageSent ? <Check size={16} /> : <ArrowUpRight size={16} />}>{messageSent ? 'WhatsApp opened' : 'Send a message'}</MoneyMindButton>{messageSent && <p className="form-success">Your message is ready to send in WhatsApp.</p>}</form></section>
 
