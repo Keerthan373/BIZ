@@ -1,1 +1,0 @@
-GitHub write-access test. Safe to delete after verification.
