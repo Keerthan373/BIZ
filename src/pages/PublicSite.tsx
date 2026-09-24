@@ -120,8 +120,8 @@ function PublicSite() {
           <button onClick={() => scrollTo('reviews')}>Reviews</button>
           <button onClick={() => scrollTo('visit')}>Visit us</button>
         </nav>
-        <MoneyMindButton variant="black" size="sm" icon={<Phone size={14} />} onClick={() => trackAnd('whatsapp_click', () => { window.open(`https://wa.me/${whatsappNumber}`, '_blank', 'noopener,noreferrer'); })}>
-          WhatsApp the store
+        <MoneyMindButton variant="black" size="sm" icon={<Phone size={14} />} onClick={() => trackAnd('call_click', () => { window.location.href = phoneHref; })}>
+          Call the store
         </MoneyMindButton>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
