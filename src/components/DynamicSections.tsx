@@ -1,7 +1,7 @@
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import type { TodaysSpecialData, NewArrivalData, SpecialOfferData, AnnouncementData } from '../hooks/usePublishedContent';
 
-const fallbackImageUrl = 'https://images.pexels.com/photos/5865240/pexels-photo-5865240.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1800';
+const fallbackImageUrl = 'https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1800';
 
 function handleImgError(e: React.SyntheticEvent<HTMLImageElement>) {
   e.currentTarget.onerror = null;
