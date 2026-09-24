@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Check, ImageUp, LogOut, Plus, Trash2, Upload } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import {
@@ -353,6 +353,11 @@ export default function AdminDashboard() {
           <span className="brand-mark">BIZ</span>
           <span className="admin-header-subtitle">Premium Outlet · Admin</span>
         </div>
+        <nav className="admin-header-nav">
+            <Link to="/admin">Content</Link>
+            <Link to="/admin/analytics">Analytics</Link>
+            <Link to="/admin/crm">CRM</Link>
+          </nav>
         <div className="admin-header-right">
           <span className="admin-header-user">{user?.email}</span>
           <button className="admin-logout-btn" onClick={handleSignOut}>
